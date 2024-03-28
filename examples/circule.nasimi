@@ -1,0 +1,33 @@
+girdir math
+girdir random
+
+sınıf Daire:
+	başla __init__(özü, radius):
+		özü.radius = radius
+
+	işləmə area(özü):
+		qaytar math.pi * özü.radius ** 2
+
+	işləmə daire_dir(özü):
+		əgər özü.radius == 1:
+			qaytar True
+		əkshalda:
+			qaytar False
+
+işləmə generate_random_circles(count):
+	daireler = []
+	üçün i özündədir araliq(count):
+		radius = random.uniform(1, 10)
+		daireler.append(Daire(radius))
+	qaytar daireler
+
+denə:
+	daireler = generate_random_circles(5)
+	üçün Daire özündədir daireler:
+		yaz(f"Radiusu {Daire.radius} olan Dairenin sahəsi {Daire.area()}")
+		əgər Daire.daire_dir():
+			yaz("Bu, vahid Dairedir.")
+		əkshalda:
+			yaz("Bu, vahid Daire deyil.")
+istisna İstisna olaraq e:
+	yaz(f"Xəta baş verdi: {e}")

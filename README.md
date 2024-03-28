@@ -1,5 +1,8 @@
-# Nasimi (Experimental)
-The First Azerbaijani Programming Language
+<p align="center">
+  <img src="Nasimi.png" alt="Nasimi" width="200">
+<h1>Nasimi <small>(Experimental)</small></h1>
+    The First Azerbaijani Programming Language
+</p>
 
 # Why?
 To facilitate programming teaching for Azerbaijani kids.
@@ -19,11 +22,11 @@ yaz("Toplama: ", toplama(a, b))
 ```
 
 # How to run
-Simply run `python3 nasimi.py calculator.nasimi`
+Simply run `python3 nasimi.py examples/calculator.nasimi`
 
 # Roadmap
 - Adding `azb` (Azerbaijani with Arabic Alphabet) Support
-- Adding installer with shortcut of `nasimi {filename}` instead of `python3 nasimi.py calculator.nasimi`
+- Adding installer with shortcut of `nasimi {filename}` instead of `python3 nasimi.py examples/calculator.nasimi`
 - Making it closer to Azerbaijani grammar for better understanding
 - Making a web code editor for testing and learning
 - Making a syntax highlighter for Visual Studio Code

@@ -6,15 +6,16 @@ class AzerbaijaniCodeRunner:
 		"başla": "def",
 		"işləmə": "def",
 		"başla:": ":",
-		"qaytar": " return",
+		"qaytar": "return",
+		"araliq": "range",
 		"özü": "self",
 		"və": "and",
 		"ya": "or",
 		"dəyil": "not",
 		"əgər": "if",
 		"əgər:": ":",
-		"əks-halda:": "else:",
-		"əks-halda": "else",
+		"əkshalda:": "else:",
+		"əkshalda": "else",
 		"üçün": "for",
 		"üçün:": ":",
 		"davam-et": "continue",
@@ -25,7 +26,7 @@ class AzerbaijaniCodeRunner:
 		"istisna:": ":",
 		"nəhayət": "finally",
 		"nəhayət:": ":",
-		"gir": "import",
+		"girdir": "import",
 		"sınıf": "class",
 		"sınıf:": ":",
 		"dəyişən": "AZJ_VARIABLE_PLACEHOLDER",
@@ -56,7 +57,9 @@ class AzerbaijaniCodeRunner:
 		"uzunluq": "len",
 		"dəyər": "value",
 		"yaz": "print",
-		"tip": "type"
+		"tip": "type",
+		'İstisna': "Exception",
+		"olaraq": "as"
 	}
 
 	def __init__(self, file_name):
@@ -83,6 +86,8 @@ class AzerbaijaniCodeRunner:
 
 		translated_code = self.translate_code(azerbaijani_code)
 		translated_code = translated_code.replace('AZJ_VARIABLE_PLACEHOLDER ', '')
+
+		print(translated_code)
 
 		try:
 			exec(translated_code, globals())
