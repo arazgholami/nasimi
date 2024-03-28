@@ -87,8 +87,6 @@ class AzerbaijaniCodeRunner:
 		translated_code = self.translate_code(azerbaijani_code)
 		translated_code = translated_code.replace('AZJ_VARIABLE_PLACEHOLDER ', '')
 
-		print(translated_code)
-
 		try:
 			exec(translated_code, globals())
 		except Exception as e:

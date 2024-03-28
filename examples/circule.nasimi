@@ -14,7 +14,7 @@ sınıf Daire:
 		əkshalda:
 			qaytar False
 
-işləmə generate_random_circles(count):
+işləmə rasgele_daire_yarat(count):
 	daireler = []
 	üçün i özündədir araliq(count):
 		radius = random.uniform(1, 10)
@@ -22,7 +22,7 @@ işləmə generate_random_circles(count):
 	qaytar daireler
 
 denə:
-	daireler = generate_random_circles(5)
+	daireler = rasgele_daire_yarat(5)
 	üçün Daire özündədir daireler:
 		yaz(f"Radiusu {Daire.radius} olan Dairenin sahəsi {Daire.area()}")
 		əgər Daire.daire_dir():
