@@ -22,11 +22,12 @@ yaz("Toplama: ", toplama(a, b))
 Simply run `python3 nasimi.py calculator.nasimi`
 
 # Roadmap
-- Add `azb` (Azerbaijani with Arabic Alphabet) Support
-- Add installer with shortcut of `nasimi {filename}` instead of `python3 nasimi.py calculator.nasimi`
-- Make it closer to Azerbaijani grammar for better understanding
-- A web code editor for testing and learning
-- Documentation addition
+- Adding `azb` (Azerbaijani with Arabic Alphabet) Support
+- Adding installer with shortcut of `nasimi {filename}` instead of `python3 nasimi.py calculator.nasimi`
+- Making it closer to Azerbaijani grammar for better understanding
+- Making a web code editor for testing and learning
+- Making a syntax highlighter for Visual Studio Code
+- Adding Documentation
 
 # Contribution
 You're welcome to help with any of the roadmap items or by adding new ideas.
@@ -35,5 +36,4 @@ You're welcome to help with any of the roadmap items or by adding new ideas.
 MIT
 
 # Contact 
-Araz Gholami
-Email: contact@arazgholami
+Araz Gholami - Email: contact@arazgholami
