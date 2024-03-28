@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Nasimi.png" alt="Nasimi" width="200">
+  <img src="Nasimi.png" alt="Nasimi">
 <h1>Nasimi <small>(Experimental)</small></h1>
     The First Azerbaijani Programming Language
 </p>
