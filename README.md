@@ -36,4 +36,4 @@ You're welcome to help with any of the roadmap items or by adding new ideas.
 MIT
 
 # Contact 
-Araz Gholami - Email: contact@arazgholami
+Araz Gholami - Email: contact@arazgholami.com
