@@ -1,0 +1,19 @@
+işləmə toplama(a, b):
+	qaytar a + b
+
+işləmə çıxma(a, b):
+	qaytar a - b
+
+işləmə vurma(a, b):
+	qaytar a * b
+
+işləmə bölmə(a, b):
+	qaytar a / b
+
+dəyişən a = 10
+dəyişən b = 5
+
+yaz("Toplama: ", toplama(a, b))
+yaz("Çıxma: ", çıxma(a, b))
+yaz("Vurma: ", vurma(a, b))
+yaz("Bölmə: ", bölmə(a, b))
