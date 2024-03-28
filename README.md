@@ -1,4 +1,4 @@
-# Nasimi
+# Nasimi (Experimental)
 The First Azerbaijani Programming Language
 
 # Why?
