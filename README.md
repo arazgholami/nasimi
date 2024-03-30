@@ -11,12 +11,13 @@ To facilitate programming teaching for Azerbaijani kids.
 No, it's just a language layer over Python.
 
 # Syntax Example
-```
-işləmə toplama(a, b):
-	qaytar a + b
-
+```python
 dəyişən a = 10
 dəyişən b = 5
+
+#Aldıqı iki numrəni toplayacaqdır
+işləmə toplama(a, b):
+	qaytar a + b
 
 yaz("Toplama: ", toplama(a, b))
 ```
