@@ -11,7 +11,7 @@ To facilitate programming teaching for Azerbaijani kids.
 No, it's just a language layer over Python.
 
 # Syntax Example
-```
+```python
 işləmə toplama(a, b):
 	qaytar a + b
 
