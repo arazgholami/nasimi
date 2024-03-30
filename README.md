@@ -30,9 +30,11 @@ gəz aralıq(0,3) içində i:
 Simply run `./nasimi examples/calculator.nasimi`
 
 # v0.3
+- Custom loop added.
+
+# v0.2
 - VSCode extention added.
 - Execuable `nasimi` shell command added.
-- Custom loop added.
 
 # Roadmap
 - Adding `azb` (Azerbaijani with Arabic Alphabet) Support
