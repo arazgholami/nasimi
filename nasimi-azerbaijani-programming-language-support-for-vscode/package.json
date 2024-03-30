@@ -1,0 +1,25 @@
+{
+  "name": "nasimi-azerbaijani-programming-language-support",
+  "displayName": "Nasimi Azerbaijani Programming Language Support",
+  "description": "Essential tools for Coding in Nasimi Language",
+  "version": "0.2.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "nasimi",
+      "aliases": ["Nasimi", "nasimi"],
+      "extensions": ["nasimi"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "nasimi",
+      "scopeName": "source.nasimi",
+      "path": "./syntaxes/nasimi.tmLanguage.json"
+    }]
+  }
+}

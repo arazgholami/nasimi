@@ -10,9 +10,9 @@ sınıf Daire:
 
 	işləmə daire_dir(özü):
 		əgər özü.radius == 1:
-			qaytar True
+			qaytar dogru
 		əkshalda:
-			qaytar False
+			qaytar yanliş
 
 işləmə rasgele_daire_yarat(count):
 	daireler = []

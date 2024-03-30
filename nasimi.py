@@ -1,5 +1,6 @@
 import sys
 import re
+import os
 
 class AzerbaijaniCodeRunner:
 	az_to_en = {
@@ -18,7 +19,7 @@ class AzerbaijaniCodeRunner:
 		"əkshalda": "else",
 		"üçün": "for",
 		"üçün:": ":",
-		"davam-et": "continue",
+		"davamet": "continue",
 		"dayan": "break",
 		"denə": "try",
 		"denə:": ":",
@@ -37,14 +38,14 @@ class AzerbaijaniCodeRunner:
 		"qədər:": ":",
 		"ilə": "with",
 		"ilə:": ":",
-		"davam-et": "pass",
+		"davamet": "pass",
 		"növbəti": "next",
 		"yarat": "def",
 		"yarat:": ":",
 		"çağır": "yield",
 		"ləğvet": "raise",
 		"hamısı": "all",
-		"hər-biri": "any",
+		"hərbiri": "any",
 		"sil": "del",
 		"özündədir": "in",
 		"işlət": "exec",
@@ -58,10 +59,11 @@ class AzerbaijaniCodeRunner:
 		"dəyər": "value",
 		"yaz": "print",
 		"tip": "type",
-		'İstisna': "Exception",
-		"olaraq": "as"
+		"İstisna": "Exception",
+		"olaraq": "as",
+		"dogru": 'True',
+		"yanliş": 'False',
 	}
-
 	def __init__(self, file_name):
 		self.file_name = file_name
 
@@ -69,6 +71,8 @@ class AzerbaijaniCodeRunner:
 		def replace(match):
 			word = match.group(0)
 			if word.startswith('"') and word.endswith('"'):
+				return word
+			if word.startswith('\'') and word.endswith('\''):
 				return word
 			translated_word = self.az_to_en.get(word, word)
 
@@ -87,8 +91,17 @@ class AzerbaijaniCodeRunner:
 		translated_code = self.translate_code(azerbaijani_code)
 		translated_code = translated_code.replace('AZJ_VARIABLE_PLACEHOLDER ', '')
 
+		dir_name = os.path.dirname(self.file_name)
+		filename = os.path.basename(self.file_name)
+		cache_file_name = os.path.join(dir_name, '.cache', filename + '.py')
+
+		os.makedirs(os.path.dirname(cache_file_name), exist_ok=True)
+
+		with open(cache_file_name, 'w', encoding='utf-8') as cache_file:
+			cache_file.write(translated_code)
+
 		try:
-			exec(translated_code, globals())
+			exec(compile(open(cache_file_name, 'rb').read(), cache_file_name, 'exec'), globals())
 		except Exception as e:
 			print("Error occurred while executing the translated code:", e)
 

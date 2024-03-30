@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Nasimi",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.nasimi",
+          "match": "\\b(başla|işləmə|başla|qaytar|araliq|özü|və|ya|dəyil|əgər|əgər|əkshalda:|əkshalda|üçün|üçün|davamet|dayan|denə|denə|istisna|istisna|nəhayət|nəhayət|girdir|sınıf|sınıf|dəyişən|sabit|yoxsa|yoxsa|qədər|qədər|ilə|ilə|davamet|növbəti|yarat|yarat|çağır|ləğvet|hamısı|hərbiri|sil|özündədir|işlət|hərtərəfli|lügət|dəstə|siyahı|tərsinə|sadala|uzunluq|dəyər|yaz|tip|İstisna|olaraq)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.nasimi",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.nasimi",
+          "match": "\\\\.?"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.nasimi",
+          "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|D|d)?"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.nasimi",
+          "match": "#.*$"
+        },
+        {
+          "name": "comment.block.documentation.nasimi",
+          "begin": "\"\"\"",
+          "end": "\"\"\""
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.nasimi",
+          "match": "\\+|\\-|\\*|/|%|\\*\\*|//|=|<|>|<=|>=|==|!=|\\|\\||\\&\\&|~|\\^"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.nasimi"
+}
