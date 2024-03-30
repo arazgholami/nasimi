@@ -29,7 +29,7 @@ gəz aralıq(0,3) içində i:
 # How to run
 Simply run `./nasimi examples/calculator.nasimi`
 
-# v0.2
+# v0.3
 - VSCode extention added.
 - Execuable `nasimi` shell command added.
 - Custom loop added.
