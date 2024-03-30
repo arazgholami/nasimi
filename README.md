@@ -27,7 +27,7 @@ Simply run `./nasimi examples/calculator.nasimi`
 
 # v0.2
 - VSCode extention added.
-- Execuable `nasimi` binary added.
+- Execuable `nasimi` shell command added.
 
 # Roadmap
 - Adding `azb` (Azerbaijani with Arabic Alphabet) Support
