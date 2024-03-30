@@ -10,13 +10,13 @@ sınıf Daire:
 
 	işləmə daire_dir(özü):
 		əgər özü.radius == 1:
-			qaytar dogru
+			qaytar doğru
 		əkshalda:
-			qaytar yanliş
+			qaytar yanlış
 
 işləmə rasgele_daire_yarat(count):
 	daireler = []
-	üçün i özündədir araliq(count):
+	üçün i özündədir aralıq(count):
 		radius = random.uniform(1, 10)
 		daireler.append(Daire(radius))
 	qaytar daireler

@@ -1,0 +1,10 @@
+#File: add.nasimi
+
+dəyişən a = 10
+dəyişən b = 5
+
+#Aldıqı iki numrəni toplayacaqdır
+işləmə toplama(a, b):
+	qaytar a + b
+
+yaz("Toplama: ", toplama(a, b))

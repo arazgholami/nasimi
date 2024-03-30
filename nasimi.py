@@ -8,7 +8,7 @@ class AzerbaijaniCodeRunner:
 		"işləmə": "def",
 		"başla:": ":",
 		"qaytar": "return",
-		"araliq": "range",
+		"aralıq": "range",
 		"özü": "self",
 		"və": "and",
 		"ya": "or",
@@ -61,8 +61,8 @@ class AzerbaijaniCodeRunner:
 		"tip": "type",
 		"İstisna": "Exception",
 		"olaraq": "as",
-		"dogru": 'True',
-		"yanliş": 'False',
+		"doğru": 'True',
+		"yanlış": 'False',
 	}
 	def __init__(self, file_name):
 		self.file_name = file_name
