@@ -16,14 +16,14 @@ sınıf Daire:
 
 işləmə rasgele_daire_yarat(count):
 	daireler = []
-	üçün i özündədir aralıq(count):
+	gəz i özündədir aralıq(count):
 		radius = random.uniform(1, 10)
 		daireler.append(Daire(radius))
 	qaytar daireler
 
 denə:
 	daireler = rasgele_daire_yarat(5)
-	üçün Daire özündədir daireler:
+	gəz Daire özündədir daireler:
 		yaz(f"Radiusu {Daire.radius} olan Dairenin sahəsi {Daire.area()}")
 		əgər Daire.daire_dir():
 			yaz("Bu, vahid Dairedir.")

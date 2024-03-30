@@ -1,0 +1,8 @@
+#File: sayHello.nasimi
+
+dəyişən salam = "Salam"
+
+#3 dəfə salam yaz
+gəz aralıq(0,3) içində i:
+	yaz(salam)
+

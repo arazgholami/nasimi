@@ -1,6 +1,6 @@
 <p align="center">
   <img src="nasimi.png" alt="Nasimi">
-<h1>Nasimi <small>(POC/Experimental) v0.2</small></h1>
+<h1>Nasimi <small>(POC/Experimental) v0.3</small></h1>
     The First Azerbaijani Programming Language
 </p>
 
@@ -20,6 +20,10 @@ işləmə toplama(a, b):
 	qaytar a + b
 
 yaz("Toplama: ", toplama(a, b))
+
+#3 dəfə salam yaz
+gəz aralıq(0,3) içində i:
+	yaz("Salam")
 ```
 
 # How to run
@@ -28,6 +32,7 @@ Simply run `./nasimi examples/calculator.nasimi`
 # v0.2
 - VSCode extention added.
 - Execuable `nasimi` shell command added.
+- Custom loop added.
 
 # Roadmap
 - Adding `azb` (Azerbaijani with Arabic Alphabet) Support

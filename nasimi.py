@@ -17,7 +17,7 @@ class AzerbaijaniCodeRunner:
 		"əgər:": ":",
 		"əkshalda:": "else:",
 		"əkshalda": "else",
-		"üçün": "for",
+		"gəz": "for",
 		"üçün:": ":",
 		"davamet": "continue",
 		"dayan": "break",
@@ -48,6 +48,7 @@ class AzerbaijaniCodeRunner:
 		"hərbiri": "any",
 		"sil": "del",
 		"özündədir": "in",
+		"içində": "in",
 		"işlət": "exec",
 		"hərtərəfli": "global",
 		"lügət": "dict",
@@ -67,7 +68,13 @@ class AzerbaijaniCodeRunner:
 	def __init__(self, file_name):
 		self.file_name = file_name
 
+	
+
 	def translate_code(self, code):
+
+		def replaceLoop(match):
+			return f"for {match.group(6)} in range({match.group(3)})"
+		
 		def replace(match):
 			word = match.group(0)
 			if word.startswith('"') and word.endswith('"'):
@@ -78,7 +85,9 @@ class AzerbaijaniCodeRunner:
 
 			return translated_word
 
-		translated_code = re.sub(r'\b\w+\b|".*?"', replace, code)
+		
+		translated_code = re.sub(r"(gəz) (\w+\()(.*?)(\)) (içində) (\w+)", replaceLoop, code)
+		translated_code = re.sub(r'\b\w+\b|".*?"', replace, translated_code)
 
 		return translated_code
 
@@ -90,6 +99,8 @@ class AzerbaijaniCodeRunner:
 
 		translated_code = self.translate_code(azerbaijani_code)
 		translated_code = translated_code.replace('AZJ_VARIABLE_PLACEHOLDER ', '')
+
+		#print(translated_code)
 
 		dir_name = os.path.dirname(self.file_name)
 		filename = os.path.basename(self.file_name)
