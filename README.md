@@ -1,14 +1,14 @@
 <p align="center">
   <img src="nasimi.png" alt="Nasimi">
 <h1>Nasimi <small>(POC/Experimental) v0.3</small></h1>
-    The First Azerbaijani Programming Language
+    The First Azerbaijani Programming Language.
 </p>
 
 # Why?
 To facilitate programming teaching for Azerbaijani kids.
 
 # Is it really a new programming language?
-No, it's just a language layer over Python.
+No, it's just a language layer over Python. It simply compiles code written in Azerbaijani syntax to normal Python code, then runs it through Python itself.
 
 # Syntax Example
 ```python
