@@ -1,0 +1,33 @@
+ایچری_آل math
+ایچری_آل random
+
+کیلاس Daire:
+	باشلا __init__(اؤزو, radius):
+		اؤزو.radius = radius
+
+	ایشلمه area(اؤزو):
+		قایتار math.pi * اؤزو.radius ** 2
+
+	ایشلمه daire_dir(اؤزو):
+		اگر اؤزو.radius == 1:
+			قایتار دوغرو
+		عکس_حالدا:
+			قایتار یانلیش
+
+ایشلمه rasgele_daire_yarat(count):
+	daireler = []
+	گز i ایچینده آرالیق(count):
+		radius = random.uniform(1, 10)
+		daireler.append(Daire(radius))
+	قایتار daireler
+
+دئنه:
+	daireler = rasgele_daire_yarat(5)
+	گز Daire ایچینده daireler:
+		یاز(f"رادیوسو {Daire.radius} اولان دایره‌نین مساحتی {Daire.area()}")
+		اگر Daire.daire_dir():
+			یاز("بو، واحید دایره‌دیر.")
+		عکس_حالدا:
+			یاز("بو، واحید دایره دییل.")
+ایستیسنا Exception اولاراق e:
+	یاز(f"خطا باش وئردی: {e}")

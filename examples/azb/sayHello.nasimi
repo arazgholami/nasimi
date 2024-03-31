@@ -1,0 +1,7 @@
+#File: sayHello.nasimi
+
+دییشن salam = "سلام"
+
+#3 dəfə salam yaz
+گز i ایچینده آرالیق(0,3):
+	یاز(salam)

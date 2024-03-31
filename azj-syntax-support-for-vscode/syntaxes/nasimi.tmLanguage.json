@@ -23,7 +23,7 @@
       "patterns": [
         {
           "name": "keyword.control.nasimi",
-          "match": "\\b(başla|işləmə|başla|qaytar|aralıq|özü|və|ya|dəyil|əgər|əgər|əkshalda:|əkshalda|gəz|davamet|dayan|denə|denə|istisna|istisna|nəhayət|nəhayət|girdir|sınıf|sınıf|dəyişən|sabit|yoxsa|yoxsa|qədər|qədər|ilə|ilə|davamet|növbəti|yarat|yarat|çağır|ləğvet|hamısı|hərbiri|sil|özündədir|işlət|hərtərəfli|lügət|dəstə|siyahı|tərsinə|sadala|uzunluq|dəyər|yaz|tip|İstisna|olaraq|doğru|yanlış)\\b"
+          "match": "\\b(başla|işləmə|başla|qaytar|aralıq|özü|və|ya|dəyil|əgər|əgər|əks_halda:|əks_halda|gəz|davamet|dayan|denə|denə|istisna|nəhayət|nəhayət|içəri_al|sınıf|sınıf|dəyişən|sabit|yoxsa|yoxsa|qədər|qədər|ilə|ilə|davamet|növbəti|yarat|yarat|çağır|ləğvet|hamısı|hərbiri|sil|özündədir|işlət|hərtərəfli|lügət|dəstə|siyahı|tərsinə|sadala|uzunluq|dəyər|yaz|tip|olaraq|doğru|yanlış)\\b"
         }
       ]
     },

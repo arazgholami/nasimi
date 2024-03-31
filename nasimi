@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Check if a file argument is provided
-if [ -z "$1" ]; then
-    echo "Error: No file provided."
-    echo "Usage: nasimi <file.py>"
+# Check if two file arguments are provided
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Error: Invalid arguments."
+    echo "Usage: nasimi <lang_name> <file.nasimi>"
     exit 1
 fi
 
-# Check if the file exists
-if [ ! -f "$1" ]; then
-    echo "Error: File $1 does not exist."
+# Check if the second argument (file) exists
+if [ ! -f "$2" ]; then
+    echo "Error: File $2 does not exist."
     exit 1
 fi
 
-# Run the Python file with python3
-python3 nasimi.py "$1"
+# Run the Python file with python3 and the two arguments
+python3 nasimi.py "$1" "$2"

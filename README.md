@@ -1,6 +1,6 @@
 <p align="center">
   <img src="nasimi.png" alt="Nasimi">
-<h1>Nasimi <small>(POC/Experimental) v0.3</small></h1>
+<h1>Nasimi <small>(POC/Experimental) v0.4</small></h1>
     The First Azerbaijani Programming Language.
 </p>
 
@@ -27,7 +27,12 @@ gəz aralıq(0,3) içində i:
 ```
 
 # How to run
-Simply run `./nasimi examples/calculator.nasimi`
+Simply run `./nasimi azj examples/azj/calculator.nasimi`
+
+# v0.4
+- Added `azb` (Azerbaijani with Arabic Alphabet) Support
+- Syntax Improvments
+- Added Custom Loop Syntax support for each Language
 
 # v0.3
 - Custom loop added.
@@ -37,7 +42,6 @@ Simply run `./nasimi examples/calculator.nasimi`
 - Execuable `nasimi` shell command added.
 
 # Roadmap
-- Adding `azb` (Azerbaijani with Arabic Alphabet) Support
 - Adding installer
 - Making it closer to Azerbaijani grammar for better understanding
 - Making a web code editor for testing and learning

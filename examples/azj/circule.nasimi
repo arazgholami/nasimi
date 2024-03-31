@@ -1,5 +1,5 @@
-girdir math
-girdir random
+içəri_al math
+içəri_al random
 
 sınıf Daire:
 	başla __init__(özü, radius):
@@ -11,7 +11,7 @@ sınıf Daire:
 	işləmə daire_dir(özü):
 		əgər özü.radius == 1:
 			qaytar doğru
-		əkshalda:
+		əks_halda:
 			qaytar yanlış
 
 işləmə rasgele_daire_yarat(count):
@@ -27,7 +27,7 @@ denə:
 		yaz(f"Radiusu {Daire.radius} olan Dairenin sahəsi {Daire.area()}")
 		əgər Daire.daire_dir():
 			yaz("Bu, vahid Dairedir.")
-		əkshalda:
+		əks_halda:
 			yaz("Bu, vahid Daire deyil.")
-istisna İstisna olaraq e:
+istisna Exception olaraq e:
 	yaz(f"Xəta baş verdi: {e}")
