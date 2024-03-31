@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Nasimi",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.nasimi",
+          "match": "\\b(باشلا|ایشلمه|باشلا:|آرالیق|اؤزو|و|یا|دییل|اگر|اگر::|عکس_حالدا|گز|اوچون:|دایان|دئنه|دئنه:|ایستیسنا:|دییشن|نهایت:|کیلاس|کیلاس:|سابیت|یوخسا|یوخسا:|اولاناقدر:|ایله:|اوبیری|یارات|یارات:|لغوئت|حامیسی|هربیری|سیل|ایچینده|ایشلت|هرطرفلی|سؤزلوک|دسته|لیست|ترسینه|سادالا|اوزونلوق|دیر|یاز|تیپ|اولاراق|دوغرو|یانلیش)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.nasimi",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.nasimi",
+          "match": "\\\\.?"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.nasimi",
+          "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|D|d)?"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.nasimi",
+          "match": "#.*$"
+        },
+        {
+          "name": "comment.block.documentation.nasimi",
+          "begin": "\"\"\"",
+          "end": "\"\"\""
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.nasimi",
+          "match": "\\+|\\-|\\*|/|%|\\*\\*|//|=|<|>|<=|>=|==|!=|\\|\\||\\&\\&|~|\\^"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.nasimi"
+}

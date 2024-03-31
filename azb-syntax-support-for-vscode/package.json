@@ -1,0 +1,25 @@
+{
+  "name": "nasimi-azb-support",
+  "displayName": "Nasimi Azerbaijani (AZB) Programming Language Support",
+  "description": "Essential tools for Coding in Nasimi Language with Arabic alphabet",
+  "version": "0.4.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "nasimi",
+      "aliases": ["Nasimi", "nasimi"],
+      "extensions": ["nasimi"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "nasimi",
+      "scopeName": "source.nasimi",
+      "path": "./syntaxes/nasimi.tmLanguage.json"
+    }]
+  }
+}
