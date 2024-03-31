@@ -1,7 +1,7 @@
 {
-  "name": "nasimi-azerbaijani-programming-language-support",
-  "displayName": "Nasimi Azerbaijani Programming Language Support",
-  "description": "Essential tools for Coding in Nasimi Language",
+  "name": "nasimi-azj-support",
+  "displayName": "Nasimi Azerbaijani (AZJ) Programming Language Support",
+  "description": "Essential tools for Coding in Nasimi Language with Latin alphabet",
   "version": "0.4.0",
   "engines": {
     "vscode": "^1.87.0"
