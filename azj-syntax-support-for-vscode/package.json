@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.87.0"
   },
+	"publisher": "arazgholami",
   "categories": [
     "Programming Languages"
   ],
