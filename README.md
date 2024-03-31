@@ -33,6 +33,7 @@ Simply run `./nasimi azj examples/azj/calculator.nasimi`
 - Added `azb` (Azerbaijani with Arabic Alphabet) Support
 - Syntax Improvments
 - Added Custom Loop Syntax support for each Language
+- Added VSCode Extention for AZB
 
 # v0.3
 - Custom loop added.
