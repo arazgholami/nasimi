@@ -51,6 +51,8 @@ Simply run `./nasimi azj examples/azj/calculator.nasimi`
 # Contribution
 You're welcome to help with any of the roadmap items or by adding new ideas.
 
+<a href="meacoffee.com/arazgholami"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200" /></a>
+
 # Licence
 MIT
 
