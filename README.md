@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="nasimi.png" alt="Nasimi" width="180">
+  <img src="nasimi.png" alt="Nasimi">
 </p>
 
 # Nasimi 1.0
