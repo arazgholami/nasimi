@@ -11,7 +11,7 @@ sınıf Daire:
 	işləmə daire_dir(özü):
 		əgər özü.radius == 1:
 			qaytar doğru
-		əks_halda:
+		əks halda:
 			qaytar yanlış
 
 işləmə rasgele_daire_yarat(count):
@@ -27,7 +27,7 @@ denə:
 		yaz(f"Radiusu {Daire.radius} olan Dairenin sahəsi {Daire.area()}")
 		əgər Daire.daire_dir():
 			yaz("Bu, vahid Dairedir.")
-		əks_halda:
+		əks halda:
 			yaz("Bu, vahid Daire deyil.")
 istisna Exception olaraq e:
 	yaz(f"Xəta baş verdi: {e}")

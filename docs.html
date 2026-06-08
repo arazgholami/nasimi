@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nasimi Documentation</title>
+  <meta name="description" content="Nasimi 1.0 bilingual documentation for AZJ and AZB.">
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #64748b;
+      --line: #d8dee8;
+      --paper: #f7f9fc;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --code: #101827;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.58 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    a { color: var(--accent-dark); text-decoration: none; font-weight: 700; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    code { color: var(--code); }
+    pre {
+      overflow: auto;
+      margin: 12px 0 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--code);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: 0; }
+    th { background: #eef6f4; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero {
+      padding: 34px 0 26px;
+      border-bottom: 1px solid var(--line);
+      background: #eef6f4;
+    }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: #324258;
+      font-size: 19px;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 28px;
+      padding: 32px 0 56px;
+    }
+    aside {
+      position: sticky;
+      top: 16px;
+      align-self: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+    }
+    aside a {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 6px;
+      color: var(--ink);
+      font-weight: 650;
+    }
+    aside a:hover { background: #eef6f4; }
+    section {
+      margin: 0 0 36px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    h2 { margin: 0 0 12px; font-size: 28px; letter-spacing: 0; }
+    h3 { margin: 24px 0 10px; font-size: 20px; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .rtl {
+      direction: rtl;
+      text-align: right;
+    }
+    .rtl pre,
+    .rtl code {
+      direction: rtl;
+      text-align: right;
+      unicode-bidi: plaintext;
+    }
+    .rtl th, .rtl td { text-align: right; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      background: #fff;
+    }
+    @media (max-width: 860px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      main { grid-template-columns: 1fr; }
+      aside { position: static; }
+      section { padding: 18px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="">
+        <span>Nasimi 1.0</span>
+      </a>
+      <div class="links">
+        <a href="index.html">Project</a>
+        <a href="playground.html">Playground</a>
+        <a href="https://github.com/arazgholami/nasimi">GitHub</a>
+      </div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="wrap">
+      <h1>Documentation</h1>
+      <p>Nasimi 1.0 is an Azerbaijani language layer over Python. It translates AZJ or AZB source code to Python, then runs it with Python.</p>
+    </div>
+  </div>
+  <main class="wrap">
+    <aside>
+      <a href="#install">Install</a>
+      <a href="#azj">AZJ Latin</a>
+      <a href="#azj-words">AZJ Words</a>
+      <a href="#azb">AZB Arabic</a>
+      <a href="#azb-words">AZB Words</a>
+      <a href="#notes">Notes</a>
+    </aside>
+    <div>
+      <section id="install">
+        <h2>Install And Run</h2>
+        <p>Install the terminal command, run examples, translate code, or start the local playground.</p>
+        <pre><code>./install
+nasimi azj examples/azj/sayHello.nasimi
+nasimi azb examples/azb/sayHello.nasimi
+nasimi translate azj examples/azj/natural.nasimi
+nasimi serve</code></pre>
+        <p class="muted">If the shell cannot find <code>nasimi</code>, add <code>~/.local/bin</code> to your <code>PATH</code>.</p>
+      </section>
+
+      <section id="azj">
+        <h2>AZJ: Latin Azerbaijani</h2>
+        <p>AZJ uses Azerbaijani with the Latin alphabet.</p>
+        <h3>Simple Program</h3>
+        <pre><code>qoy salam = "Salam"
+yaz(salam)</code></pre>
+        <h3>Function</h3>
+        <pre><code>funksiya topla(a, b):
+    qaytar a + b
+
+yaz(topla(3, 4))</code></pre>
+        <h3>Condition</h3>
+        <pre><code>qoy yaş = 12
+
+əgər yaş >= 10 isə:
+    yaz("Hazırsan")
+əks halda:
+    yaz("Bir az da məşq edək")</code></pre>
+        <h3>Loop</h3>
+        <pre><code>qoy adlar = ["Aylin", "Tural", "Leyla"]
+
+gəz adlar içində ad:
+    yaz(ad)</code></pre>
+        <h3>Class</h3>
+        <pre><code>sinif Uşaq:
+    başla __init__(özü, ad):
+        özü.ad = ad
+
+    funksiya salamla(özü):
+        yaz("Salam, " + özü.ad)</code></pre>
+      </section>
+
+      <section id="azj-words">
+        <h2>AZJ Word List</h2>
+        <table>
+          <thead><tr><th>Nasimi</th><th>Python</th></tr></thead>
+          <tbody>
+            <tr><td><code>qoy</code>, <code>dəyişən</code></td><td>variable marker, removed before Python runs</td></tr>
+            <tr><td><code>funksiya</code>, <code>işləmə</code>, <code>əməl</code>, <code>yarat</code></td><td><code>def</code></td></tr>
+            <tr><td><code>qaytar</code>, <code>ver</code></td><td><code>return</code></td></tr>
+            <tr><td><code>əgər</code>, <code>yoxsa</code>, <code>əks halda</code></td><td><code>if</code>, <code>elif</code>, <code>else</code></td></tr>
+            <tr><td><code>gəz</code>, <code>dövr</code>, <code>içində</code></td><td><code>for</code>, <code>in</code></td></tr>
+            <tr><td><code>olduqca</code>, <code>qədər</code></td><td><code>while</code></td></tr>
+            <tr><td><code>dayan</code>, <code>davamet</code></td><td><code>break</code>, <code>continue</code></td></tr>
+            <tr><td><code>sinif</code>, <code>sınıf</code>, <code>özü</code></td><td><code>class</code>, <code>self</code></td></tr>
+            <tr><td><code>yaz</code>, <code>oxu</code>, <code>say</code></td><td><code>print</code>, <code>input</code>, <code>len</code></td></tr>
+            <tr><td><code>doğru</code>, <code>yanlış</code>, <code>boş</code></td><td><code>True</code>, <code>False</code>, <code>None</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="azb" class="rtl" lang="az-Arab">
+        <h2>AZB: عرب الفبالی آذربایجان دیلی</h2>
+        <p>AZB عرب الفباسی ایله آذربایجان دیلی اوچوندور.</p>
+        <h3>ساده پروقرام</h3>
+        <pre><code>قوی salam = "سلام"
+یاز(salam)</code></pre>
+        <h3>فونکسییا</h3>
+        <pre><code>فونکسییا topla(a, b):
+    قایتار a + b
+
+یاز(topla(3, 4))</code></pre>
+        <h3>شرط</h3>
+        <pre><code>قوی yas = 12
+
+اگر yas >= 10 ایسه:
+    یاز("حاضیرسان")
+عکس حالدا:
+    یاز("بیر آز دا مشق ائدک")</code></pre>
+        <h3>دؤور</h3>
+        <pre><code>قوی adlar = ["آیلین", "تورال", "لیلا"]
+
+گز adlar ایچینده ad:
+    یاز(ad)</code></pre>
+        <h3>کیلاس</h3>
+        <pre><code>سینیف Usaq:
+    باشلا __init__(اؤزو, ad):
+        اؤزو.ad = ad
+
+    فونکسییا salamla(اؤزو):
+        یاز("سلام، " + اؤزو.ad)</code></pre>
+      </section>
+
+      <section id="azb-words" class="rtl" lang="az-Arab">
+        <h2>AZB سؤزلوک</h2>
+        <table>
+          <thead><tr><th>Nasimi</th><th>Python</th></tr></thead>
+          <tbody>
+            <tr><td><code>قوی</code>, <code>دییشن</code></td><td>variable marker</td></tr>
+            <tr><td><code>فونکسییا</code>, <code>ایشلمه</code>, <code>عمل</code>, <code>یارات</code></td><td><code>def</code></td></tr>
+            <tr><td><code>قایتار</code>, <code>وئر</code></td><td><code>return</code></td></tr>
+            <tr><td><code>اگر</code>, <code>یوخسا</code>, <code>عکس حالدا</code></td><td><code>if</code>, <code>elif</code>, <code>else</code></td></tr>
+            <tr><td><code>گز</code>, <code>دؤور</code>, <code>ایچینده</code></td><td><code>for</code>, <code>in</code></td></tr>
+            <tr><td><code>اولدوقجا</code>, <code>اولاناقدر</code></td><td><code>while</code></td></tr>
+            <tr><td><code>دایان</code>, <code>دوام_ائت</code></td><td><code>break</code>, <code>continue</code></td></tr>
+            <tr><td><code>سینیف</code>, <code>کیلاس</code>, <code>اؤزو</code></td><td><code>class</code>, <code>self</code></td></tr>
+            <tr><td><code>یاز</code>, <code>اوخو</code>, <code>سای</code></td><td><code>print</code>, <code>input</code>, <code>len</code></td></tr>
+            <tr><td><code>دوغرو</code>, <code>یانلیش</code>, <code>بوش</code></td><td><code>True</code>, <code>False</code>, <code>None</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="notes">
+        <h2>Notes</h2>
+        <p>Nasimi files use Python indentation rules. Use <code>:</code> for blocks and keep indentation consistent.</p>
+        <p>The GitHub Pages playground is a static editor. To execute code with the same local interpreter, run <code>nasimi serve</code> and open the printed local URL.</p>
+        <p>The Markdown version remains available as <a href="DOCUMENTATION.md">DOCUMENTATION.md</a>.</p>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">Nasimi 1.0. MIT licensed. Created by <a href="https://arazgholami.com">Araz Gholami</a>.</div>
+  </footer>
+</body>
+</html>

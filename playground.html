@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nasimi 1.0 Playground</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #64748b;
+      --line: #d8dee8;
+      --paper: #f7f9fc;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --warn: #a16207;
+      --code: #0f172a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 750;
+      font-size: 20px;
+    }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .version {
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 650;
+    }
+    main {
+      padding: 28px 0 36px;
+    }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 36px);
+      letter-spacing: 0;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    select, button {
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--ink);
+      font: inherit;
+      padding: 0 12px;
+    }
+    button {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-title {
+      min-height: 44px;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 14px;
+      font-weight: 750;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    textarea, pre {
+      margin: 0;
+      flex: 1;
+      width: 100%;
+      min-height: 376px;
+      border: 0;
+      resize: vertical;
+      padding: 16px;
+      font: 15px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--code);
+      background: #fbfdff;
+      white-space: pre-wrap;
+      overflow: auto;
+    }
+    .rtl-text {
+      direction: rtl;
+      text-align: right;
+      unicode-bidi: plaintext;
+    }
+    textarea:focus {
+      outline: 2px solid color-mix(in srgb, var(--accent), transparent 70%);
+      outline-offset: -2px;
+    }
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+    .stack .panel {
+      min-height: 202px;
+    }
+    .stack pre {
+      min-height: 158px;
+    }
+    .status {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 14px;
+    }
+    .status.warn {
+      color: var(--warn);
+    }
+    @media (max-width: 860px) {
+      .topbar, .toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <img src="logo.png" alt="">
+        <span>Nasimi Playground</span>
+        <span class="version">1.0</span>
+      </div>
+      <nav>
+        <a href="index.html">Project</a>
+        <a href="docs.html">Documentation</a>
+        <a href="https://github.com/arazgholami/nasimi">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="toolbar">
+      <h1>Write Nasimi 1.0, run Python</h1>
+      <div class="controls">
+        <select id="lang" aria-label="Language">
+          <option value="azj">AZJ Latin</option>
+          <option value="azb">AZB Arabic</option>
+        </select>
+        <button id="sample">Sample</button>
+        <button class="primary" id="run">Run</button>
+      </div>
+    </div>
+    <div class="grid">
+      <section class="panel">
+        <div class="panel-title">Code</div>
+        <textarea id="code" spellcheck="false"></textarea>
+      </section>
+      <div class="stack">
+        <section class="panel">
+          <div class="panel-title">Output <span id="runStatus"></span></div>
+          <pre id="output"></pre>
+        </section>
+        <section class="panel">
+          <div class="panel-title">Translated Python</div>
+          <pre id="translated"></pre>
+        </section>
+      </div>
+    </div>
+    <p id="serverStatus" class="status"></p>
+  </main>
+  <script>
+    const samples = {
+      azj: `funksiya salamla(ad):\n    qaytar "Salam, " + ad\n\nqoy adlar = ["Aylin", "Tural", "Leyla"]\n\ngəz adlar içində ad:\n    yaz(salamla(ad))\n\nəgər say(adlar) == 3 isə:\n    yaz("Üç dost hazırdır")\nəks halda:\n    yaz("Siyahıya bax")\n`,
+      azb: `فونکسییا salamla(ad):\n    قایتار "سلام، " + ad\n\nقوی adlar = ["آیلین", "تورال", "لیلا"]\n\nگز adlar ایچینده ad:\n    یاز(salamla(ad))\n\nاگر سای(adlar) == 3 ایسه:\n    یاز("اوچ دوست حاضردیر")\nعکس حالدا:\n    یاز("لیسته‌یه باخ")\n`
+    };
+
+    const code = document.querySelector("#code");
+    const lang = document.querySelector("#lang");
+    const output = document.querySelector("#output");
+    const translated = document.querySelector("#translated");
+    const runStatus = document.querySelector("#runStatus");
+    const serverStatus = document.querySelector("#serverStatus");
+
+    function setSample() {
+      code.value = samples[lang.value];
+      output.textContent = "";
+      translated.textContent = "";
+      runStatus.textContent = "";
+      syncDirection();
+    }
+
+    function syncDirection() {
+      const isAzb = lang.value === "azb";
+      code.dir = isAzb ? "rtl" : "ltr";
+      output.dir = isAzb ? "rtl" : "ltr";
+      code.classList.toggle("rtl-text", isAzb);
+      output.classList.toggle("rtl-text", isAzb);
+      translated.dir = "ltr";
+      translated.classList.remove("rtl-text");
+    }
+
+    async function runCode() {
+      output.textContent = "Running...";
+      translated.textContent = "";
+      runStatus.textContent = "";
+      const body = new URLSearchParams({ lang: lang.value, code: code.value });
+      try {
+        const response = await fetch("/run", {
+          method: "POST",
+          headers: { "content-type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body
+        });
+        if (!response.ok) throw new Error("No local Nasimi server");
+        const result = await response.json();
+        output.textContent = (result.stdout || "") + (result.stderr || "");
+        translated.textContent = result.translated || "";
+        runStatus.textContent = result.status === 0 ? "OK" : "Error";
+        serverStatus.textContent = "Connected to the local nasimi serve API.";
+        serverStatus.className = "status";
+      } catch (error) {
+        output.textContent = "Run this playground locally with: nasimi serve\nThen open the printed http://localhost address.";
+        translated.textContent = "";
+        runStatus.textContent = "Offline";
+        serverStatus.textContent = "Static pages cannot execute the local Python binary by themselves.";
+        serverStatus.className = "status warn";
+      }
+    }
+
+    document.querySelector("#sample").addEventListener("click", setSample);
+    document.querySelector("#run").addEventListener("click", runCode);
+    lang.addEventListener("change", setSample);
+    setSample();
+  </script>
+</body>
+</html>

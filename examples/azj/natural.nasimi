@@ -1,0 +1,12 @@
+qoy adlar = ["Aylin", "Tural", "Leyla"]
+
+funksiya salamla(ad):
+	qaytar "Salam, " + ad
+
+gəz adlar içində ad:
+	yaz(salamla(ad))
+
+əgər say(adlar) == 3 isə:
+	yaz("Üç dost hazırdır")
+əks halda:
+	yaz("Siyahıya bax")

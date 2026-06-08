@@ -1,60 +1,119 @@
 <p align="center">
-  <img src="nasimi.png" alt="Nasimi">
-<h1>Nasimi <small>(POC/Experimental) v0.4</small></h1>
-    The First Azerbaijani Programming Language.
+  <img src="nasimi.png" alt="Nasimi" width="180">
 </p>
 
-# Why?
-To facilitate programming teaching for Azerbaijani kids.
+# Nasimi 1.0
 
-# Is it really a new programming language?
-No, it's just a language layer over Python. It simply compiles code written in Azerbaijani syntax to normal Python code, then runs it through Python itself.
+Nasimi 1.0 is an experimental Azerbaijani language layer over Python. It helps Azerbaijani-speaking children learn programming with familiar words while still running on Python underneath.
 
-# Syntax Example
-```python
-dəyişən a = 10
-dəyişən b = 5
+Nasimi currently supports:
 
-#Aldıqı iki numrəni toplayacaqdır
-işləmə toplama(a, b):
-	qaytar a + b
+- `azj`: Azerbaijani with Latin alphabet
+- `azb`: Azerbaijani with Arabic alphabet
+- terminal execution through the `nasimi` command
+- local browser playground through `nasimi serve`
+- VS Code syntax support packages for both alphabets
 
-yaz("Toplama: ", toplama(a, b))
+## Install
 
-#3 dəfə salam yaz
-gəz aralıq(0,3) içində i:
-	yaz("Salam")
+```bash
+./install
+nasimi azj examples/azj/sayHello.nasimi
 ```
 
-# How to run
-Simply run `./nasimi azj examples/azj/calculator.nasimi`
+The installer creates a `nasimi` command in `~/.local/bin` by default. To install somewhere else:
 
-# v0.4
-- Added `azb` (Azerbaijani with Arabic Alphabet) Support
-- Syntax Improvments
-- Added Custom Loop Syntax support for each Language
-- Added VSCode Extention for AZB
+```bash
+NASIMI_INSTALL_DIR=/usr/local/bin ./install
+```
 
-# v0.3
-- Custom loop added.
+## Usage
 
-# v0.2
-- VSCode extention added.
-- Execuable `nasimi` shell command added.
+Old short form:
 
-# Roadmap
-- Adding installer
-- Making it closer to Azerbaijani grammar for better understanding
-- Making a web code editor for testing and learning
-- Adding Documentation
+```bash
+nasimi azj examples/azj/calculator.nasimi
+nasimi azb examples/azb/calculator.nasimi
+```
 
-# Contribution
-You're welcome to help with any of the roadmap items or by adding new ideas.
+Explicit commands:
 
-<a href="https://buymeacoffee.com/arazgholami"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200" /></a>
+```bash
+nasimi run azj examples/azj/calculator.nasimi
+nasimi translate azj examples/azj/calculator.nasimi
+nasimi serve
+```
 
-# Licence
+`nasimi serve` starts the local playground API and prints a browser URL. The static `playground.html` page can be opened anywhere, but code execution requires the local server because browsers cannot run the local Python binary directly.
+
+## AZJ Example
+
+```python
+qoy adlar = ["Aylin", "Tural", "Leyla"]
+
+funksiya salamla(ad):
+    qaytar "Salam, " + ad
+
+gəz adlar içində ad:
+    yaz(salamla(ad))
+
+əgər say(adlar) == 3 isə:
+    yaz("Üç dost hazırdır")
+əks halda:
+    yaz("Siyahıya bax")
+```
+
+<h2 dir="rtl" align="right">AZB Example</h2>
+
+<pre dir="rtl" align="right"><code>قوی adlar = ["آیلین", "تورال", "لیلا"]
+
+فونکسییا salamla(ad):
+    قایتار "سلام، " + ad
+
+گز adlar ایچینده ad:
+    یاز(salamla(ad))
+
+اگر سای(adlar) == 3 ایسه:
+    یاز("اوچ دوست حاضردیر")
+عکس حالدا:
+    یاز("لیسته‌یه باخ")
+</code></pre>
+
+## Documentation
+
+Read [docs.html](docs.html) for the web documentation, or [DOCUMENTATION.md](DOCUMENTATION.md) for the Markdown version. Both include the full bilingual reference, grammar examples, command list, and vocabulary tables.
+
+Project pages:
+
+- [index.html](index.html): GitHub Pages introduction
+- [docs.html](docs.html): HTML documentation
+- [playground.html](playground.html): browser playground for `nasimi serve`
+
+## What Changed In Version 1.0
+
+- Added `./install` for a terminal-wide `nasimi` command.
+- Made the command path-safe, so it can run from any directory.
+- Added `run`, `translate`, and `serve` CLI commands while keeping the old `nasimi azj file.nasimi` form.
+- Reworked translation to use Python tokenization, so strings and comments are no longer accidentally translated.
+- Added more natural Azerbaijani grammar forms, including `əgər ... isə`, `əks halda`, `qoy`, `funksiya`, and `gəz siyahı içində ad`.
+- Added local playground execution through the same Nasimi interpreter.
+- Added GitHub Pages landing page and bilingual documentation.
+
+## Roadmap
+
+- More classroom examples and exercises
+- Better runtime error messages that point back to original `.nasimi` lines
+- Packaged releases for Linux/macOS/Windows
+- Expanded editor integrations
+
+## Contributing
+
+Contributions are welcome: grammar ideas, examples, documentation, tests, and beginner-friendly teaching material all help.
+
+## License
+
 MIT
 
-# Contact 
-Araz Gholami - Email: contact@arazgholami.com
+## Contact
+
+[Araz Gholami](https://arazgholami.com) - contact@arazgholami.com

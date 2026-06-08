@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nasimi 1.0</title>
+  <meta name="description" content="Nasimi 1.0 is an Azerbaijani language layer over Python for young learners.">
+  <style>
+    :root {
+      --ink: #18212f;
+      --muted: #5f6f85;
+      --line: #d7dee9;
+      --soft: #eef6f4;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --paper: #f8fafc;
+      --code: #101827;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    a { color: var(--accent-dark); text-decoration: none; font-weight: 700; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      min-height: 86vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        linear-gradient(90deg, rgba(248,250,252,.94), rgba(248,250,252,.58)),
+        url("nasimi.png") center right 9vw / min(440px, 48vw) auto no-repeat,
+        var(--soft);
+      border-bottom: 1px solid var(--line);
+    }
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 21px;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .version {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: white;
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero {
+      flex: 1;
+      display: grid;
+      align-items: center;
+      padding: 48px 0 78px;
+      max-width: 680px;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(44px, 10vw, 92px);
+      line-height: .94;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 0 0 26px;
+      max-width: 620px;
+      color: #324258;
+      font-size: clamp(18px, 2.4vw, 23px);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+    }
+    .button.primary {
+      color: white;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    main { padding: 42px 0 64px; }
+    section { margin-top: 42px; }
+    section:first-child { margin-top: 0; }
+    h2 { margin: 0 0 14px; font-size: 27px; letter-spacing: 0; }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    pre {
+      overflow: auto;
+      margin: 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--code);
+      font: 15px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .muted { color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      background: white;
+    }
+    @media (max-width: 820px) {
+      header { background-position: right 24px bottom 18px; background-size: 190px auto; }
+      nav, .split { grid-template-columns: 1fr; }
+      nav { align-items: flex-start; flex-direction: column; padding: 18px 0; }
+      .columns { grid-template-columns: 1fr; }
+      .hero { padding-bottom: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <div class="brand">
+        <img src="logo.png" alt="">
+        <span>Nasimi</span>
+        <span class="version">1.0</span>
+      </div>
+      <div class="links">
+        <a href="playground.html">Playground</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://github.com/arazgholami/nasimi">GitHub</a>
+      </div>
+    </nav>
+    <div class="wrap hero">
+      <div>
+        <h1>Nasimi 1.0</h1>
+        <p class="lead">A friendly Azerbaijani layer over Python, built to help children meet programming through words that already feel close to home.</p>
+        <div class="actions">
+          <a class="button primary" href="playground.html">Open Playground</a>
+          <a class="button" href="docs.html">Read Documentation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="columns">
+      <article class="card">
+        <h3>Python underneath</h3>
+        <p>Nasimi translates Azerbaijani syntax to Python, then lets Python run the program.</p>
+      </article>
+      <article class="card">
+        <h3>Two alphabets</h3>
+        <p>Use AZJ Latin or AZB Arabic-script Azerbaijani language files and examples.</p>
+      </article>
+      <article class="card">
+        <h3>Local playground</h3>
+        <p>Run <code>nasimi serve</code> and experiment in the browser with the same interpreter.</p>
+      </article>
+    </section>
+    <section class="split">
+      <div>
+        <h2>Install</h2>
+        <p class="muted">Clone the repository, install the command, then run any example from the terminal.</p>
+      </div>
+      <pre><code>./install
+nasimi azj examples/azj/sayHello.nasimi
+nasimi serve</code></pre>
+    </section>
+    <section class="split">
+      <div>
+        <h2>Example</h2>
+        <p class="muted">A small loop written with a more natural Azerbaijani word order.</p>
+      </div>
+      <pre><code>qoy adlar = ["Aylin", "Tural", "Leyla"]
+
+gəz adlar içində ad:
+    yaz("Salam, " + ad)</code></pre>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">Nasimi 1.0. MIT licensed. Created by <a href="https://arazgholami.com">Araz Gholami</a>.</div>
+  </footer>
+</body>
+</html>

@@ -1,17 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Check if two file arguments are provided
-if [ -z "$1" ] || [ -z "$2" ]; then
-    echo "Error: Invalid arguments."
-    echo "Usage: nasimi <lang_name> <file.nasimi>"
-    exit 1
-fi
-
-# Check if the second argument (file) exists
-if [ ! -f "$2" ]; then
-    echo "Error: File $2 does not exist."
-    exit 1
-fi
-
-# Run the Python file with python3 and the two arguments
-python3 nasimi.py "$1" "$2"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$ROOT_DIR/nasimi.py" "$@"

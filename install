@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TARGET_DIR="${NASIMI_INSTALL_DIR:-$HOME/.local/bin}"
+TARGET="$TARGET_DIR/nasimi"
+
+mkdir -p "$TARGET_DIR"
+chmod +x "$PROJECT_DIR/nasimi" "$PROJECT_DIR/nasimi.py"
+
+cat > "$TARGET" <<EOF
+#!/usr/bin/env bash
+exec python3 "$PROJECT_DIR/nasimi.py" "\$@"
+EOF
+
+chmod +x "$TARGET"
+
+echo "Nasimi installed: $TARGET"
+if [[ ":$PATH:" != *":$TARGET_DIR:"* ]]; then
+  echo "Add this to your shell profile if 'nasimi' is not found:"
+  echo "  export PATH=\"$TARGET_DIR:\$PATH\""
+fi
+echo "Try: nasimi azj $PROJECT_DIR/examples/azj/sayHello.nasimi"
