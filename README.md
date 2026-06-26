@@ -116,4 +116,4 @@ MIT
 
 ## Contact
 
-[Araz Gholami](https://arazgholami.com) - contact@arazgholami.com
+[Araz Gray](https://arazgray.com) - contact@arazgray.com
